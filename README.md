@@ -40,7 +40,7 @@ Die Sensordaten können wir über **HTTP GET** oder [**MQTT**](https://mqtt.org/
 
 Per HTTP können wir alle Messwerte eines Datastreams runterziehen, was sich insbesondere für Analysen auf den aggregierten Zeitreihen anbietet. MQTT bietet sich dagegen eher für die fast Echtzeitdaten an, bei denen uns immer nur der aktuellste Wert interessiert, den wir uns bsp. in einer App anzeigen lassen wollen. Beide Varianten werden wir uns an einem Beispiel ansehen.
 
-Mit dem [Python Client](src/staClient_2_observations.py) holen wir uns für die Verkehrszählstelle [5576](https://iot.hamburg.de/v1.1/Things(5576)), per **HTTP GET Request**, alle [Messwerte](https://iot.hamburg.de/v1.1/Datastreams(11846)/Observations?$orderBy=phenomenonTime %20desc&$count=true&$top=100&$skip=0) (*Observations*) im 1 Tagesintervall und plotten sie in einem Liniendiagramm (*vgl. Abb. 2*). Dabei nutzen wir das Paging, d.h. wir laden pro Request max. 100 Observations herunter.
+Mit dem [Python Client](src/staClient_2_observations.py) holen wir uns für die Verkehrszählstelle [5576](https://iot.hamburg.de/v1.1/Things(5576)), per **HTTP GET Request**, alle [Messwerte](https://iot.hamburg.de/v1.1/Datastreams(11846)/Observations?$orderBy=phenomenonTime%20desc&$count=true&$top=100&$skip=0) (*Observations*) im 1 Tagesintervall und plotten sie in einem Liniendiagramm (*vgl. Abb. 2*). Dabei nutzen wir das Paging, d.h. wir laden pro Request max. 100 Observations herunter.
 
 ![chartObservations.jpg](img/chartObservations.jpg)
 Abb. 2: Line Chart Observations
